@@ -21,4 +21,4 @@ centroids = kmmeans.cluster_centers_
 labels = kmmeans.labels_
 
 
-print(centroids)
+print('\nCentroids\n\n{}\nLabels\n\n{}\n'.format(centroids, labels))
