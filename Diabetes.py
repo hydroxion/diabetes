@@ -15,7 +15,7 @@ data = DataFrame(data)
 data.columns = ['Preg','Plas','Pres','Skin','Insu','Mass','Pedi','Age']
 
 for col in data.columns:
-    data = data[~data[col].isnull()] # If some instance is null, doesn' enter ~
+    data = data[~data[col].isnull()] # If some instance is null, doesn't enter ~
 
 
 print(data)
