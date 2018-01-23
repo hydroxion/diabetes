@@ -1,6 +1,8 @@
 
 # coding: utf-8
 
+# python3 Diabetes.py
+
 from os import path
 
 from pandas import read_csv, DataFrame
@@ -8,7 +10,7 @@ from pandas import read_csv, DataFrame
 
 std = str(path.dirname(path.abspath(__file__))) + '/'
 
-data = read_csv(std + 'Diabetes.csv', sep=',', usecols=[0,1,2,3,4,5,6,7])
+data = read_csv(std + 'Diabetes.csv', sep=',', usecols=list(range(8)))
 
 data = DataFrame(data)
 
@@ -18,6 +20,6 @@ for col in data.columns:
     data = data[~data[col].isnull()] # If some instance is null, doesn't enter ~
 
 
-print(data)
+print('\n{}\n'.format(data.head()))
 
-data.to_csv(std +'Dataset.csv')
+data.to_csv(std[:-5] +'Dataset.csv')
