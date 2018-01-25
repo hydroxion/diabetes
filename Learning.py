@@ -9,16 +9,18 @@ from sklearn import cluster
 
 from pandas import read_csv
 
+import matplotlib.pyplot as plt
+
 
 std = str(path.dirname(path.abspath(__file__))) + '/'
 
-data = read_csv(std + 'Dataset.csv')
+data = read_csv(std + 'Dataset.csv', nrows=5)
 
-kmmeans = cluster.KMeans(n_clusters=6).fit(data)
+kmeans = cluster.KMeans(n_clusters=6).fit(data)
 
-centroids = kmmeans.cluster_centers_
+centers = kmeans.cluster_centers_
 
-labels = kmmeans.labels_
+labels = kmeans.labels_
 
 
-print('\n{2}Centroids{3}\n\n{0}\n\n{2}Labels{3}\n\n{1}\n'.format(centroids, labels, '\033[31m', '\033[37m'))
+print('\n{2}Centroids{3}\n\n{0}\n\n{2}Labels{3}\n\n{1}\n'.format(centers, labels, '\033[31m', '\033[37m'))
