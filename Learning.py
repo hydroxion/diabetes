@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# python3 Learning.py
-
 from os import path
 
 from sklearn import cluster
@@ -14,7 +12,7 @@ import matplotlib.pyplot as plt
 
 std = str(path.dirname(path.abspath(__file__))) + '/'
 
-data = read_csv(std + 'Dataset.csv', nrows=5)
+data = read_csv(std + 'Dataset.csv')
 
 kmeans = cluster.KMeans(n_clusters=6).fit(data)
 

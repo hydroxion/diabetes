@@ -1,25 +1,23 @@
 
-# Rscript Learning.r
-
 library(cluster)
 
-library(fpc) # install.packages('fpc')
+library(clValid)
 
 library(dbscan)
 
 
-dat <- read.csv(file='Dataset.csv', sep=",", header=TRUE)
-
-km <- kmeans(dat, center=6)
-
-db <- dbscan(dat, 5, minPts=5)
+data <- read.csv(file='Dataset.csv', sep=",", header=TRUE)
 
 
-cat("\n[ Km ] \033[31mClusters\033[37m\n\n", km$cluster, "\n\n\033[31mCenters\033[37m\n\n", km$centers, "\n\n")
+km <- kmeans(data, center=6)
 
-cat("\n[ Db ] \033[31mEmpty\033[37m\n\n\n")
+dnk <- dunn(dist(data), km$cluster)
+
+cat("\nDunn, K-means \033[31m:\033[37m ", dnk, "\n\n")
 
 
-plotcluster(dat, km$cluster, xlab=NULL, ylab=NULL)
+db <- dbscan(data, 60, minPts=6)
 
-# plotcluster(dat, db$cluster, xlab=NULL, ylab=NULL)
+dnb <- dunn(dist(data), db$cluster)
+
+cat("\nDunn, Db-scan \033[31m:\033[37m ", dnb, "\n\n")

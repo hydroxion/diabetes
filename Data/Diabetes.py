@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# python3 Diabetes.py
-
 from os import path
 
 from pandas import read_csv, DataFrame
@@ -17,7 +15,7 @@ data = DataFrame(data)
 data.columns = ['Preg','Plas','Pres','Skin','Insu','Mass','Pedi','Age']
 
 for col in data.columns:
-    data = data[~data[col].isnull()] # If some instance is null, doesn't enter ~
+    data = data[~data[col].isnull()]
 
 
 print('\n{}\n'.format(data.head()))

@@ -30,13 +30,3 @@
 [K-means R Lang](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kmeans.html)
 
 [R Documentation](https://www.rdocumentation.org/)
-
-#### Files
-
-`Data / Diabetes.csv ` Is the original Dataset
-
-`Data / Diabetes.py ` Is the script of pre-processing
-
-`Learning.py` And `Learning.r` are the algorithms of learning ( K-means )
-
-`Rplots.pdf` Is the result of `Learning.r`
