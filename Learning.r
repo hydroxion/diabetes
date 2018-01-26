@@ -27,3 +27,5 @@ dnb <- dunn(dist(data), db$cluster)
 cat("\nDunn, Db-scan \033[31m:\033[37m ", dnb, "\n\n")
 
 plot(data, col=db$cluster)
+
+# plot(hclust(dist(recorte), method = "complete"))
